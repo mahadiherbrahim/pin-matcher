@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pin-generator half-width">
+                    <input class="form-control" type="text" id="generatePinInput" value="">
+                    <button class="generate-btn" onclick="getGeneratePin()">Generate Pin</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <form action="" id="form">
+                    <div class="input-section half-width">
+                        <input class="form-control" type="text" id="matchPinInput" value="">
+                        <div class="numbers">
+                            <div class="calc-body">
+                                <div class="calc-button-row">
+                                    <input type="button" class="btn button" value="7" onclick="getInputValue(this.value)">
+                                    <input type="button" class="btn button" value="8" onclick="getInputValue(this.value)">
+                                    <input type="button" class="btn button" value="9" onclick="getInputValue(this.value)">
+                                </div>
+                                <div class="calc-button-row">
+                                    <input type="button" class="btn button" value="4" onclick="getInputValue(this.value)">
+                                    <input type="button" class="btn button" value="5" onclick="getInputValue(this.value)">
+                                    <input type="button" class="btn button" value="6" onclick="getInputValue(this.value)">
+                                </div>
+                                <div class="calc-button-row">
+                                    <input type="button" class="btn button" value="1" onclick="getInputValue(this.value)">
+                                    <input type="button" class="btn button" value="2" onclick="getInputValue(this.value)">
+                                    <input type="button" class="btn button" value="3" onclick="getInputValue(this.value)">
+                                </div>
+                                <div class="calc-button-row">
+                                    <div class="button">
+                                        <</div>
+                                            <input type="button" class="btn button" value="0" onclick="getInputValue(this.value)">
+                                            <div class="button" onclick="clearInput()">C</div>
+                                    </div>
+                                    <div>
+                                        <input type="button" class="submit-btn" value="Submit" onclick="submitForMatch()">
+                                        <p class="action-left">3 try left</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="notify-section">
+                    <p class="notify" id="dontMatch">❌ Pin Didn't Match, Please try again</p>
+                    <p class="notify" id="match">✅ Pin Matched... Secret door is opening for you</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
