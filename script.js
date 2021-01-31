@@ -1,12 +1,23 @@
-//function for get generate random 4 digit number
-function getGeneratePin() {
-    const getGeneratePin = (Math.random() * 10000 + '').split(".")[0];
-    const generatePinInput = document.getElementById('generatePinInput')
-    const generatePinValue = parseInt(generatePinInput);
-    generatePinInput.value = getGeneratePin;
+//function for get pin
+function gePin() {
+    const generatePin = (Math.random() * 10000 + '').split(".")[0];
+
+    if (generatePin.length == 4) {
+        return generatePin;
+    } else {
+        return getGeneratePin();
+    }
 }
 
-//function for get innput value
+
+//function for display generate pin
+function getGeneratePin() {
+    const generatePinInput = document.getElementById('generatePinInput')
+    generatePinInput.value = gePin();
+}
+
+
+//function for get input value
 function getInputValue(pinInput) {
     const form = document.getElementById('form');
     const matchPinInput = document.getElementById('matchPinInput');
